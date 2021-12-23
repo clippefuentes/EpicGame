@@ -6,30 +6,28 @@ const main = async () => {
     "https://www.pngitem.com/pimgs/m/5-50871_dank-spiderman-hd-png-download.png", 
     "https://64.media.tumblr.com/1a7576b72e6ae2bf0b883a19729e18ad/tumblr_ortzuiAZRT1w7964eo1_640.png"],
     [500, 450, 300],                    // HP values
-    [200, 300, 500]                       // Attack damage values
+    [200, 300, 500],                   // Attack damage values
+    "Tanos", // Boss name
+    "https://pm1.narvii.com/6823/76cac0fbf2c4e7bce98f575514573412af97ebdfv2_hq.jpg", // Boss image
+    10000, // Boss hp
+    50 // Boss attack damage
   );
   await gameContract.deployed();
   console.log("Contract deployed to:", gameContract.address);
 
-  
-  let txn;
-  txn = await gameContract.mintCharacterNFT(0);
-  await txn.wait();
-  console.log("Minted NFT #1");
+  // let txn;
+  // // We only have three characters.
+  // // an NFT w/ the character at index 2 of our array.
+  // txn = await gameContract.mintCharacterNFT(2);
+  // await txn.wait();
 
-  txn = await gameContract.mintCharacterNFT(1);
-  await txn.wait();
-  console.log("Minted NFT #2");
+  // txn = await gameContract.attackBoss();
+  // await txn.wait();
 
-  txn = await gameContract.mintCharacterNFT(2);
-  await txn.wait();
-  console.log("Minted NFT #3");
+  // txn = await gameContract.attackBoss();
+  // await txn.wait();
 
-  txn = await gameContract.mintCharacterNFT(1);
-  await txn.wait();
-  console.log("Minted NFT #4");
-
-  console.log("Done deploying and minting!");
+  console.log("Done!");
 
 };
 
